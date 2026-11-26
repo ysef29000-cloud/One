@@ -1,0 +1,127 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#FC82A7;--pale:#FDE3EB;--ink:#0B0B0B;--grey:#5a5a5a}
+@page{size:96mm 56mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff}
+/* 90x50mm trim + 3mm bleed each side; content kept inside 4mm safe margin */
+.card{width:96mm;height:56mm;position:relative;overflow:hidden;background:#fff;break-after:page}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+
+/* shared pieces */
+.mono{font:400 34pt/1 'Playfair Display';letter-spacing:-.02em;color:var(--ink)}
+.name{font:500 12.6pt/1 'Playfair Display';letter-spacing:.08em;color:var(--ink);white-space:nowrap}
+.pill{display:inline-block;background:var(--pink);border-radius:1.3mm;padding:1.1mm 2.6mm 1mm;font:700 6.3pt/1 'Cormorant Garamond';letter-spacing:.15em;color:var(--ink)}
+.role{font:600 7.2pt/1.3 'Cormorant Garamond';letter-spacing:.14em;color:var(--grey)}
+.cap{font:600 6.4pt/1 'Cormorant Garamond';letter-spacing:.32em;color:var(--ink)}
+.row{display:flex;align-items:center;gap:2.4mm;font:600 7.6pt/1 'Montserrat';letter-spacing:.06em;color:var(--ink)}
+.ic{width:4.4mm;height:4.4mm;border-radius:50%;background:var(--ink);display:grid;place-items:center;flex:none}
+.ic svg{width:2.5mm;height:2.5mm;fill:var(--pink)}
+.rule{height:.3mm;background:var(--ink)}
+
+/* ---------- A · Classic (white) ---------- */
+.A.front .mark{position:relative;display:flex;align-items:center;justify-content:center}
+.A.front .mono{font-size:66pt;line-height:.9}
+.A.front .bar{position:absolute;left:50%;top:57%;transform:translate(-50%,-50%);background:var(--pink);border-radius:1.2mm;padding:.9mm 3.2mm;white-space:nowrap;font:600 6.6pt/1 'Playfair Display';letter-spacing:.32em;color:var(--ink)}
+.A.front .cap{margin-top:3.6mm}
+.A.back .stripe{position:absolute;left:0;top:0;bottom:0;width:9mm;background:var(--pink)}
+.A.back .content{position:absolute;left:14.5mm;top:11mm;right:7mm}
+.A.back .pill{margin-top:2.6mm}.A.back .role{margin-top:2.2mm}
+.A.back .rule{margin:3.2mm 0 3mm;width:28mm}
+.A.back .contact{display:flex;flex-direction:column;gap:1.8mm}
+
+/* ---------- B · Blush (pink front) ---------- */
+.B.front{background:var(--pink)}
+.B.front .mono{font-style:italic;font-size:44pt}
+.B.front .rule{width:12mm;margin:3mm 0 2.6mm}
+.B.front .name{font-size:9pt;letter-spacing:.3em}
+.B.back .center{gap:0}
+.B.back .rule{width:10mm;height:.4mm;background:var(--pink);margin:2.6mm 0}
+.B.back .role{color:var(--ink)}
+.B.back .pill{margin-top:1.6mm}
+.B.back .contact{display:flex;gap:6mm;margin-top:4mm}
+
+/* ---------- C · Noir (black) ---------- */
+.C{background:var(--ink)}
+.C .mono{color:var(--pink);font-size:44pt}
+.C .name{color:#fff}
+.C.front .rule{width:12mm;background:var(--pink);margin:3mm 0 2.6mm}
+.C.front .name{font-size:9pt;letter-spacing:.3em}
+.C.back .content{position:absolute;left:10mm;top:11mm;right:10mm}
+.C.back .role{color:#bdbdbd;margin-top:2.2mm}
+.C.back .pill{margin-top:2.6mm}
+.C.back .contact{position:absolute;left:10mm;right:10mm;bottom:10mm;display:flex;justify-content:space-between;padding-top:2.8mm;border-top:.25mm solid #444}
+.C .row{color:#fff}
+.C .ic{background:var(--pink)}.C .ic svg{fill:var(--ink)}
+.C.back .mono-s{position:absolute;right:10mm;top:10mm;font:400 14pt/1 'Playfair Display';color:var(--pink)}
+
+/* ---------- D · Split ---------- */
+.D.front .panel{position:absolute;right:0;top:0;bottom:0;width:36mm;background:var(--pink);display:flex;align-items:center;justify-content:center}
+.D.front .panel .mono{font-size:36pt}
+.D.front .left{position:absolute;left:10mm;top:0;bottom:0;width:46mm;display:flex;flex-direction:column;justify-content:center}
+.D.front .big{font:400 17pt/1.05 'Playfair Display';color:var(--ink);letter-spacing:.02em}
+.D.front .big i{font-style:italic}
+.D.front .rule{width:10mm;height:.4mm;background:var(--pink);margin:3mm 0 2.6mm}
+.D.front .cap{font-size:5.8pt;letter-spacing:.22em;line-height:1.5}
+.D.back{background:var(--pink)}
+.D.back .center{gap:0}
+.D.back .role{color:var(--ink)}
+.D.back .pill{background:var(--ink);color:#fff;margin:2.4mm 0 1.8mm}
+.D.back .contact{display:flex;gap:6mm;margin-top:3.6mm}
+.D .ic{background:#fff}.D .ic svg{fill:var(--ink)}
+</style></head><body>
+<!-- icon sprites -->
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+</defs></svg>
+<template id="contact"><div class="row"><span class="ic"><svg><use href="#phone"/></svg></span>0109 098 9095</div><div class="row"><span class="ic"><svg><use href="#wa"/></svg></span>0102 931 7959</div></template>
+
+<!-- A -->
+<section class="card A front" data-opt="A"><div class="center">
+  <div class="mark"><div class="mono">MK</div><div class="bar">MENNA KHALED</div></div>
+  <div class="cap">SKIN &amp; HAIR CARE SPECIALIST</div></div></section>
+<section class="card A back" data-opt="A"><div class="stripe"></div><div class="content">
+  <div class="name">MENNA KHALED HAZEM</div>
+  <div class="pill">CERTIFIED SKIN &amp; HAIR CARE SPECIALIST</div>
+  <div class="role">BEAUTY &amp; LASER CLINIC OWNER</div>
+  <div class="rule"></div><div class="contact"></div></div></section>
+
+<!-- B -->
+<section class="card B front" data-opt="B"><div class="center">
+  <div class="mono">MK</div><div class="rule"></div><div class="name">MENNA KHALED HAZEM</div></div></section>
+<section class="card B back" data-opt="B"><div class="center">
+  <div class="name">MENNA KHALED HAZEM</div><div class="rule"></div>
+  <div class="role">CERTIFIED SKIN &amp; HAIR CARE SPECIALIST</div>
+  <div class="pill">BEAUTY &amp; LASER CLINIC OWNER</div>
+  <div class="contact"></div></div></section>
+
+<!-- C -->
+<section class="card C front" data-opt="C"><div class="center">
+  <div class="mono">MK</div><div class="rule"></div><div class="name">MENNA KHALED HAZEM</div></div></section>
+<section class="card C back" data-opt="C"><div class="mono-s">MK</div><div class="content">
+  <div class="name">MENNA KHALED HAZEM</div>
+  <div class="pill">CERTIFIED SKIN &amp; HAIR CARE SPECIALIST</div>
+  <div class="role">BEAUTY &amp; LASER CLINIC OWNER</div></div>
+  <div class="contact"></div></section>
+
+<!-- D -->
+<section class="card D front" data-opt="D">
+  <div class="left"><div class="big">Menna<br><i>Khaled Hazem</i></div><div class="rule"></div>
+  <div class="cap">SKIN &amp; HAIR CARE SPECIALIST</div></div>
+  <div class="panel"><div class="mono">MK</div></div></section>
+<section class="card D back" data-opt="D"><div class="center">
+  <div class="name">MENNA KHALED HAZEM</div>
+  <div class="pill">CERTIFIED SKIN &amp; HAIR CARE SPECIALIST</div>
+  <div class="role">BEAUTY &amp; LASER CLINIC OWNER</div>
+  <div class="contact"></div></div></section>
+
+<script>
+const t=document.getElementById('contact').innerHTML;
+document.querySelectorAll('.contact').forEach(c=>c.innerHTML=t);
+// ?opt=X keeps only that option (used for the print PDF)
+const o=new URLSearchParams(location.search).get('opt');
+if(o)document.querySelectorAll('.card').forEach(c=>{if(c.dataset.opt!==o)c.remove()});
+</script>
+</body></html>
