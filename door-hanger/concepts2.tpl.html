@@ -1,0 +1,169 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* One Rose door hanger concepts. Trim 95x245mm (+3mm bleed). Built from concepts2.tpl.html by build-concepts2.js */
+:root{--pink:#FC82A7;--pinkd:#E05A86;--blush:#FFF1F5;--ink:#151515;--grey:#8a7f83}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'IBM Plex Sans Arabic';background:#fff;display:flex;gap:10mm}
+.sheet{width:101mm;height:251mm;position:relative;overflow:hidden;flex:none;background:#fff}
+.t{position:absolute;left:3mm;top:3mm;width:95mm;height:245mm}
+.rose{position:absolute;display:block}
+.serif{font-family:'Cormorant Garamond';direction:ltr}
+.die{position:absolute;inset:0;pointer-events:none}
+.die *{fill:none;stroke:#00AEEF;stroke-width:.35;stroke-dasharray:1.6 1}
+.ph{font:600 10.5pt/1 'Montserrat';letter-spacing:.06em;direction:ltr}
+.k{font:600 5.6pt/1 'Montserrat';letter-spacing:.32em;direction:ltr}
+
+/* shared back */
+.back .in{position:absolute;left:10mm;right:10mm;top:56mm;bottom:12mm;display:flex;flex-direction:column;align-items:center;text-align:center}
+.back h2{font:600 13pt/1 'Cormorant Garamond';letter-spacing:.2em;direction:ltr}
+.back .ar{font:700 10pt/1 'IBM Plex Sans Arabic';margin-top:2.2mm}
+.back .grp{margin-top:6.4mm}
+.back .grp b{display:block;font:600 7.4pt/1 'IBM Plex Sans Arabic';margin-bottom:1.4mm}
+.back .grp p{font:400 7pt/1.65 'IBM Plex Sans Arabic'}
+.back .qr{width:20mm;height:20mm;border:.35mm dashed currentColor;border-radius:1.6mm;display:grid;place-items:center;font:600 6pt/1 'Montserrat';margin-top:9mm;opacity:.8}
+.back .scan{font:500 6.8pt/1 'IBM Plex Sans Arabic';margin-top:2mm}
+.back .addr{font:400 6.6pt/1.65 'IBM Plex Sans Arabic';margin-top:auto}
+.back .mark{width:12mm;height:12mm;position:relative}
+.back .mark .rose{position:static;width:100%;height:100%}
+
+/* ---------- 1 · Editorial photo (like the reference) ---------- */
+.c1.front{background:linear-gradient(160deg,#f3c9b6 0%,#d99a86 45%,#8c5446 100%)}
+.c1 .photo-note{position:absolute;left:0;right:0;top:95mm;text-align:center;font:500 7pt/1.6 'IBM Plex Sans Arabic';color:rgba(255,255,255,.75)}
+.c1 .shade{position:absolute;left:-3mm;right:-3mm;bottom:-3mm;height:110mm;background:linear-gradient(0deg,rgba(20,10,10,.82),rgba(20,10,10,0))}
+.c1 .txt{position:absolute;left:8mm;right:8mm;bottom:12mm;text-align:center;color:#fff}
+.c1 .brand{font:500 20pt/1 'Cormorant Garamond';letter-spacing:.14em}
+.c1 .sub{margin-top:2mm;color:#fff;opacity:.85}
+.c1 .open{font:700 12pt/1.4 'IBM Plex Sans Arabic';margin-top:6mm}
+.c1 .gift{display:inline-block;margin-top:3mm;background:var(--pink);color:var(--ink);border-radius:5mm;padding:1.6mm 4mm;font:700 8.6pt/1 'IBM Plex Sans Arabic'}
+.c1 .ph{margin-top:5mm;color:#fff}
+.c1.back{background:#3a302f;color:#efe6e3}
+.c1.back .grp b{color:var(--pink)}
+
+/* ---------- 2 · Long-stem rose ---------- */
+.c2.front{background:var(--ink);color:#fff}
+.c2 .rose{left:-6mm;top:50mm;width:62mm}
+.c2 .txt{position:absolute;right:8mm;width:44mm;top:126mm;text-align:right}
+.c2 .brand{font:500 17pt/1.05 'Cormorant Garamond';letter-spacing:.08em;text-align:right}
+.c2 .open{font:700 11pt/1.5 'IBM Plex Sans Arabic';margin-top:4mm}
+.c2 .gift{margin-top:4mm;border-top:.3mm solid var(--pink);padding-top:3mm}
+.c2 .gift small{display:block;font:600 6.4pt/1 'IBM Plex Sans Arabic';color:var(--pink)}
+.c2 .gift div{font:700 9.6pt/1.45 'IBM Plex Sans Arabic';margin-top:1.6mm}
+.c2 .ph{position:absolute;right:8mm;bottom:12mm;color:var(--pink)}
+.c2 .k{position:absolute;right:8mm;top:58mm;color:var(--pink);transform-origin:right top;transform:rotate(-90deg) translateX(100%)}
+.c2.back{background:#fff;color:var(--ink)}
+.c2.back .grp b{color:var(--pinkd)}
+
+/* ---------- 3 · Petals ---------- */
+.c3.front{background:var(--blush)}
+.c3 .rose{right:-38mm;top:48mm;width:104mm}
+.c3 .txt{position:absolute;left:8mm;right:8mm;top:156mm;text-align:right;color:var(--ink)}
+.c3 .brand{font:500 24pt/1 'Cormorant Garamond';letter-spacing:.04em;text-align:right}
+.c3 .brand i{color:var(--pinkd)}
+.c3 .open{font:700 11.4pt/1.5 'IBM Plex Sans Arabic';margin-top:3.6mm}
+.c3 .gift{margin-top:4mm;background:#fff;border-radius:2.6mm;padding:3mm 3.6mm}
+.c3 .gift small{display:block;font:600 6.4pt/1 'IBM Plex Sans Arabic';color:var(--pinkd)}
+.c3 .gift div{font:700 9.8pt/1.4 'IBM Plex Sans Arabic';margin-top:1.4mm}
+.c3 .ph{margin-top:5mm;text-align:right}
+.c3 .k{position:absolute;right:8mm;top:12mm;color:var(--pinkd)}
+.c3.back{background:#fff;color:var(--ink)}
+.c3.back .grp b{color:var(--pinkd)}
+
+/* ---------- 4 · Rose head die-cut: the hole is the heart of the rose ---------- */
+.c4.front{background:#fff}
+.c4 .rose{left:-1.5mm;top:-17.5mm;width:98mm}
+.c4 .txt{position:absolute;left:8mm;right:8mm;top:122mm;text-align:center;color:var(--ink)}
+.c4 .brand{font:500 21pt/1 'Cormorant Garamond';letter-spacing:.16em}
+.c4 .open{font:700 11.4pt/1.5 'IBM Plex Sans Arabic';margin-top:5mm}
+.c4 .gift{margin-top:5mm;background:var(--ink);color:#fff;border-radius:2.6mm;padding:3.4mm}
+.c4 .gift small{display:block;font:600 6.4pt/1 'IBM Plex Sans Arabic';color:var(--pink)}
+.c4 .gift div{font:700 10pt/1.4 'IBM Plex Sans Arabic';margin-top:1.4mm}
+.c4 .ph{position:absolute;left:0;right:0;bottom:12mm;text-align:center}
+.c4.back{background:var(--pink);color:var(--ink)}
+.c4.back .in{top:66mm}
+.c4.back .grp b{color:#fff}
+</style></head><body>
+
+<!-- 1 · Editorial photo -->
+<section class="sheet c1 front"><div class="t">
+  <div class="photo-note">مكان صورة موديل<br>(Close-up بشرة نضيفة)</div>
+  <div class="shade"></div>
+  <div class="txt">
+    <div class="brand serif">ONE ROSE</div>
+    <div class="k sub">BEAUTY CLINIC</div>
+    <div class="open">افتتاح أحدث صرح للجلدية والليزر والتجميل</div>
+    <div class="gift">الكشف مجاني على البشرة والشعر</div>
+    <div class="ph">01X XXXX XXXX</div>
+  </div>
+</div><svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M63.5,24 L95,8"/></svg></section>
+<section class="sheet c1 back"><div class="t"><div class="in">
+  <h2>OUR SERVICES</h2><div class="ar">خدمات العيادة المتكاملة</div>
+  <div class="grp"><b>العناية الفائقة ونضارة البشرة</b><p>هيدرافيشل للوجه والظهر والمؤخرة · أوكسيجينو<br>التقشير البارد والكيميائي · الديرما بن</p></div>
+  <div class="grp"><b>العلاجات التجميلية والجلدية</b><p>إزالة الزوائد الجلدية · جلد الوزة · شد الجفون بدون جراحة<br>آثار العمليات وعلامات التمدد · الندبات العميقة</p></div>
+  <div class="grp"><b>الحقن التجميلي والعلاجي</b><p>فيلر · بوتوكس · سكين بوستر · ميزوثيرابي</p></div>
+  <div class="qr">QR</div><div class="scan">امسحي الكود للحجز على الواتساب</div>
+  <div class="addr">جسر السويس (الجراج) – بجوار مترو النزهة<br>1 ش عزيز المصري – أمام سنترال النزهة – الدور الرابع</div>
+</div></div><svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M31.5,24 L0,8"/></svg></section>
+
+<!-- 2 · Long-stem rose -->
+<section class="sheet c2 front"><div class="t">
+  {{LINE_STEM}}
+  <div class="k">GRAND OPENING</div>
+  <div class="txt">
+    <div class="brand serif">One<br>Rose</div>
+    <div class="open">افتتاح أحدث صرح للجلدية والليزر والتجميل</div>
+    <div class="gift"><small>هدية الافتتاح لفترة محدودة</small><div>الكشف مجاني على البشرة والشعر</div></div>
+  </div>
+  <div class="ph">01X XXXX XXXX</div>
+</div><svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M63.5,24 L95,8"/></svg></section>
+<section class="sheet c2 back"><div class="t"><div class="in">
+  <div class="mark">{{LINE_SMALL_W}}</div>
+  <h2 style="margin-top:3mm">OUR SERVICES</h2><div class="ar">خدمات العيادة المتكاملة</div>
+  <div class="grp"><b>العناية الفائقة ونضارة البشرة</b><p>هيدرافيشل للوجه والظهر والمؤخرة · أوكسيجينو<br>التقشير البارد والكيميائي · الديرما بن</p></div>
+  <div class="grp"><b>العلاجات التجميلية والجلدية</b><p>إزالة الزوائد الجلدية · جلد الوزة · شد الجفون بدون جراحة<br>آثار العمليات وعلامات التمدد · الندبات العميقة</p></div>
+  <div class="grp"><b>الحقن التجميلي والعلاجي</b><p>فيلر · بوتوكس · سكين بوستر · ميزوثيرابي</p></div>
+  <div class="qr">QR</div><div class="scan">امسحي الكود للحجز على الواتساب</div>
+  <div class="addr">جسر السويس (الجراج) – بجوار مترو النزهة<br>1 ش عزيز المصري – أمام سنترال النزهة – الدور الرابع</div>
+</div></div><svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M31.5,24 L0,8"/></svg></section>
+
+<!-- 3 · Petals -->
+<section class="sheet c3 front"><div class="t">
+  {{FILLED_BIG}}
+  <div class="k">GRAND OPENING</div>
+  <div class="txt">
+    <div class="brand serif">One <i>Rose</i></div>
+    <div class="open">افتتاح أحدث صرح<br>للجلدية والليزر والتجميل</div>
+    <div class="gift"><small>هدية الافتتاح لفترة محدودة</small><div>الكشف مجاني على البشرة والشعر</div></div>
+    <div class="ph">01X XXXX XXXX</div>
+  </div>
+</div><svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M63.5,24 L95,8"/></svg></section>
+<section class="sheet c3 back"><div class="t"><div class="in">
+  <div class="mark">{{FILLED_SMALL}}</div>
+  <h2 style="margin-top:3mm">OUR SERVICES</h2><div class="ar">خدمات العيادة المتكاملة</div>
+  <div class="grp"><b>العناية الفائقة ونضارة البشرة</b><p>هيدرافيشل للوجه والظهر والمؤخرة · أوكسيجينو<br>التقشير البارد والكيميائي · الديرما بن</p></div>
+  <div class="grp"><b>العلاجات التجميلية والجلدية</b><p>إزالة الزوائد الجلدية · جلد الوزة · شد الجفون بدون جراحة<br>آثار العمليات وعلامات التمدد · الندبات العميقة</p></div>
+  <div class="grp"><b>الحقن التجميلي والعلاجي</b><p>فيلر · بوتوكس · سكين بوستر · ميزوثيرابي</p></div>
+  <div class="qr">QR</div><div class="scan">امسحي الكود للحجز على الواتساب</div>
+  <div class="addr">جسر السويس (الجراج) – بجوار مترو النزهة<br>1 ش عزيز المصري – أمام سنترال النزهة – الدور الرابع</div>
+</div></div><svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M31.5,24 L0,8"/></svg></section>
+
+<!-- 4 · Rose head die-cut -->
+<section class="sheet c4 front"><div class="t">
+  {{FILLED_TOP}}
+  <div class="txt">
+    <div class="brand serif">ONE ROSE</div>
+    <div class="k" style="margin-top:2mm;color:var(--pinkd)">BEAUTY CLINIC</div>
+    <div class="open">افتتاح أحدث صرح<br>للجلدية والليزر والتجميل</div>
+    <div class="gift"><small>هدية الافتتاح لفترة محدودة</small><div>الكشف مجاني على البشرة والشعر</div></div>
+  </div>
+  <div class="ph">01X XXXX XXXX</div>
+</div><svg class="die" viewBox="-3 -3 101 251"><path d="M0,47.5 A47.5,47.5 0 0 1 95,47.5 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 Z"/><circle cx="47.5" cy="30" r="11"/><path d="M58.5,30 L94,30"/></svg></section>
+<section class="sheet c4 back"><div class="t"><div class="in">
+  <h2>OUR SERVICES</h2><div class="ar">خدمات العيادة المتكاملة</div>
+  <div class="grp"><b>العناية الفائقة ونضارة البشرة</b><p>هيدرافيشل للوجه والظهر والمؤخرة · أوكسيجينو<br>التقشير البارد والكيميائي · الديرما بن</p></div>
+  <div class="grp"><b>العلاجات التجميلية والجلدية</b><p>إزالة الزوائد الجلدية · جلد الوزة · شد الجفون بدون جراحة<br>آثار العمليات وعلامات التمدد · الندبات العميقة</p></div>
+  <div class="grp"><b>الحقن التجميلي والعلاجي</b><p>فيلر · بوتوكس · سكين بوستر · ميزوثيرابي</p></div>
+  <div class="qr">QR</div><div class="scan">امسحي الكود للحجز على الواتساب</div>
+  <div class="addr">جسر السويس (الجراج) – بجوار مترو النزهة<br>1 ش عزيز المصري – أمام سنترال النزهة – الدور الرابع</div>
+</div></div><svg class="die" viewBox="-3 -3 101 251"><path d="M0,47.5 A47.5,47.5 0 0 1 95,47.5 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 Z"/><circle cx="47.5" cy="30" r="11"/><path d="M36.5,30 L1,30"/></svg></section>
+</body></html>
