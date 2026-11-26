@@ -1,0 +1,93 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#FC82A7;--ink:#0B0B0B;--soft:#7a6f72}
+@page{size:96mm 56mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff}
+/* pink front / white back. 90x50mm trim + 3mm bleed */
+.card{width:96mm;height:56mm;position:relative;overflow:hidden;break-after:page;background:#fff}
+.front{background:var(--pink)}
+.row{display:flex;align-items:center;gap:1.8mm;font:500 6.6pt/1 'Montserrat';letter-spacing:.05em;color:var(--ink)}
+.ic{width:3.6mm;height:3.6mm;border-radius:50%;background:var(--pink);display:grid;place-items:center;flex:none}
+.ic svg{width:2.1mm;height:2.1mm;fill:#fff}
+.caps{font:600 5.4pt/1.7 'Montserrat';letter-spacing:.3em;color:var(--ink)}
+.title{font:italic 500 8.6pt/1.35 'Cormorant Garamond';color:var(--soft)}
+
+/* ---------- H · Monogram ---------- */
+.H.front .big{position:absolute;right:-5mm;top:-6mm;font:italic 400 136pt/1 'Playfair Display';color:#fff;opacity:.92}
+.H.front .txt{position:absolute;left:10mm;bottom:10mm}
+.H.front .nm{font:400 12pt/1 'Playfair Display';letter-spacing:.02em;color:var(--ink);margin-bottom:2mm}
+.H.back .m{position:absolute;right:10mm;top:9mm;font:italic 400 20pt/1 'Playfair Display';color:var(--pink)}
+.H.back .top{position:absolute;left:10mm;top:10mm}
+.H.back .nm{font:600 8pt/1 'Montserrat';letter-spacing:.24em;color:var(--ink);margin-bottom:2.2mm}
+.H.back .line{position:absolute;left:10mm;right:10mm;top:31mm;height:.25mm;background:var(--pink)}
+.H.back .contact{position:absolute;left:10mm;bottom:10mm;display:flex;gap:6mm}
+
+/* ---------- I · Frame ---------- */
+.I .frame{position:absolute;left:7mm;top:7mm;right:7mm;bottom:7mm;border:.3mm solid #fff}
+.I.back .frame{border-color:var(--pink)}
+.I .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.I.front .nm{font:500 17pt/1.05 'Cormorant Garamond';letter-spacing:.14em;color:var(--ink)}
+.orn{display:flex;align-items:center;gap:1.6mm;margin:2.6mm 0 2.4mm}
+.orn i{display:block;width:9mm;height:.25mm;background:currentColor}
+.orn b{display:block;width:1.4mm;height:1.4mm;transform:rotate(45deg);background:currentColor}
+.I.front .orn{color:#fff}
+.I.back .orn{color:var(--pink);margin:2mm 0 2mm}
+.I.back .nm{font:600 7.6pt/1 'Montserrat';letter-spacing:.26em;color:var(--ink)}
+.I.back .contact{display:flex;gap:5mm;margin-top:3mm}
+
+/* ---------- J · Stacked ---------- */
+.J.front .txt{position:absolute;left:11mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center}
+.J.front .a{font:400 30pt/.95 'Playfair Display';color:var(--ink)}
+.J.front .b{font:italic 400 17pt/1.1 'Cormorant Garamond';color:#fff;margin-top:.6mm}
+.J.front .caps{margin-top:3.6mm}
+.J.front .vline{position:absolute;right:13mm;top:7mm;bottom:7mm;width:.3mm;background:#fff}
+.J.front .mk{position:absolute;right:16mm;bottom:8mm;font:italic 400 9pt/1 'Cormorant Garamond';color:#fff;letter-spacing:.1em}
+.J.back .band{position:absolute;left:0;right:0;bottom:0;height:7mm;background:var(--pink)}
+.J.back .left{position:absolute;left:11mm;top:11mm}
+.J.back .nm{font:400 12pt/1 'Playfair Display';color:var(--ink);margin-bottom:1.8mm}
+.J.back .vline{position:absolute;left:60mm;top:11mm;height:25mm;width:.25mm;background:var(--pink)}
+.J.back .contact{position:absolute;left:64mm;top:11mm;display:flex;flex-direction:column;gap:2.4mm}
+.J.back .caps{margin-top:2.6mm}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+</defs></svg>
+<template id="contact"><div class="row"><span class="ic"><svg><use href="#phone"/></svg></span>0109 098 9095</div><div class="row"><span class="ic"><svg><use href="#wa"/></svg></span>0102 931 7959</div></template>
+
+<!-- H -->
+<section class="card H front" data-opt="H"><div class="big">M</div>
+  <div class="txt"><div class="nm">Menna Khaled Hazem</div><div class="caps">SKIN &amp; HAIR CARE SPECIALIST</div></div></section>
+<section class="card H back" data-opt="H"><div class="m">M</div>
+  <div class="top"><div class="nm">MENNA KHALED HAZEM</div>
+  <div class="title">Certified Skin &amp; Hair Care Specialist<br>Beauty &amp; Laser Clinic Owner</div></div>
+  <div class="line"></div><div class="contact"></div></section>
+
+<!-- I -->
+<section class="card I front" data-opt="I"><div class="frame"></div><div class="c">
+  <div class="nm">MENNA<br>KHALED HAZEM</div><div class="orn"><i></i><b></b><i></i></div>
+  <div class="caps">SKIN &amp; HAIR CARE SPECIALIST</div></div></section>
+<section class="card I back" data-opt="I"><div class="frame"></div><div class="c">
+  <div class="nm">MENNA KHALED HAZEM</div><div class="orn"><i></i><b></b><i></i></div>
+  <div class="title">Certified Skin &amp; Hair Care Specialist<br>Beauty &amp; Laser Clinic Owner</div>
+  <div class="contact"></div></div></section>
+
+<!-- J -->
+<section class="card J front" data-opt="J"><div class="txt">
+  <div class="a">Menna</div><div class="b">Khaled Hazem</div><div class="caps">SKIN &amp; HAIR CARE SPECIALIST</div></div>
+  <div class="vline"></div></section>
+<section class="card J back" data-opt="J">
+  <div class="left"><div class="nm">Menna Khaled Hazem</div>
+  <div class="title">Certified Skin &amp; Hair<br>Care Specialist</div>
+  <div class="caps">BEAUTY &amp; LASER<br>CLINIC OWNER</div></div>
+  <div class="vline"></div><div class="contact"></div><div class="band"></div></section>
+
+<script>
+const t=document.getElementById('contact').innerHTML;
+document.querySelectorAll('.contact').forEach(c=>c.innerHTML=t);
+const o=new URLSearchParams(location.search).get('opt');
+if(o)document.querySelectorAll('.card').forEach(c=>{if(c.dataset.opt!==o)c.remove()});
+</script>
+</body></html>
