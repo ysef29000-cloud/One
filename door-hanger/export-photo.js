@@ -1,9 +1,10 @@
 // Photo version: print PDF (bleed) + previews with dieline overlay + overlap check on the back.
 const {chromium}=require('playwright');const fs=require('fs');
 const TH=process.argv[2]||'';  // '', W, P or N
-const SUF=TH?'-'+TH:'';
+const IMG=process.argv[3]||'';  // '' or rose
+const SUF=(IMG?'-'+IMG:'')+(TH?'-'+TH:'');
 (async()=>{
-  const b=await chromium.launch();const url='file://'+__dirname+'/door-hanger-photo.html?theme='+TH;
+  const b=await chromium.launch();const url='file://'+__dirname+'/door-hanger-photo.html?theme='+TH+'&img='+IMG;
   const p=await b.newPage();
   await p.goto(url);await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(800);
   await p.pdf({path:__dirname+'/One-Rose-Door-Hanger-photo'+SUF+'-print.pdf',printBackground:true,preferCSSPageSize:true});
