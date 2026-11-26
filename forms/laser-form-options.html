@@ -1,0 +1,116 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Playfair+Display:ital@0;1&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Same content as laser-form.html, four visual themes: ?v=A|B|C|D */
+:root{--pink:#FC82A7;--pinkd:#E05A86;--blush:#FFF5F8;--blush2:#FFE9F0;--line:#EEDDE3;--ink:#151515;--grey:#857a7e}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'IBM Plex Sans Arabic';color:var(--ink);background:#fff}
+.page{width:210mm;height:297mm;padding:14mm 14mm 10mm;position:relative;overflow:hidden}
+header{display:flex;align-items:center;justify-content:space-between}
+h1{font:700 18pt/1.2 'IBM Plex Sans Arabic'}
+.sub{font:500 8.6pt/1 'IBM Plex Sans Arabic';color:var(--grey);margin-top:2mm}
+.en{display:none}
+.logo{width:30mm;mix-blend-mode:multiply}
+.fileno{font:500 8.6pt/1 'IBM Plex Sans Arabic';color:var(--grey);display:flex;align-items:flex-end;gap:2mm;width:52mm;margin-top:4mm}
+.fileno i{flex:1;border-bottom:.25mm solid #bfb3b7;height:4.4mm}
+h2{font:700 10.4pt/1 'IBM Plex Sans Arabic';margin:7mm 0 3.6mm;display:flex;align-items:center;gap:2.2mm}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:5mm 10mm}
+.f{display:flex;align-items:flex-end;gap:2.4mm;font:500 8.8pt/1 'IBM Plex Sans Arabic';color:var(--grey);white-space:nowrap}
+.f i{flex:1;border-bottom:.25mm solid #c9bdc1;height:4.8mm}
+table{width:100%;border-collapse:separate;border-spacing:0}
+th{font:600 8pt/1.3 'IBM Plex Sans Arabic';padding:2.6mm 1mm;text-align:center}
+td{height:8.4mm}
+td.no{width:12mm;text-align:center;font:600 8.4pt/1 'Montserrat'}
+.notes i{display:block;border-bottom:.25mm solid #d8cdd1;height:8mm}
+footer{position:absolute;right:14mm;left:14mm;bottom:7mm;display:flex;justify-content:space-between;font:500 6.8pt/1 'Montserrat';letter-spacing:.08em;color:var(--grey)}
+
+/* ===== A · Clean (current) ===== */
+.A .page::before{content:"";position:absolute;top:0;right:0;left:0;height:2mm;background:var(--pink)}
+.A header{padding-bottom:4mm;border-bottom:.3mm solid var(--ink)}
+.A h2::before{content:"";width:1.2mm;height:4.4mm;border-radius:1mm;background:var(--pink)}
+.A table{border:.25mm solid var(--line);border-radius:2.6mm;overflow:hidden}
+.A th{background:var(--ink);color:#fff}
+.A td{border-top:.25mm solid var(--line);border-left:.25mm solid var(--line)}
+.A td:last-child{border-left:none}
+.A tr:nth-child(even) td{background:var(--blush)}
+.A td.no{color:var(--pinkd)}
+
+/* ===== B · Soft (rounded, blush) ===== */
+.B header{background:var(--blush2);border-radius:4mm;padding:6mm 7mm}
+.B .fileno i{border-color:#e3b9c7}
+.B h2{color:var(--pinkd)}
+.B h2::before{content:"";width:2.2mm;height:2.2mm;border-radius:50%;background:var(--pink)}
+.B .fields{background:var(--blush);border-radius:4mm;padding:5mm 6mm}
+.B .f i{border-color:#e3b9c7}
+.B table{border:.3mm solid var(--line);border-radius:4mm;overflow:hidden}
+.B th{background:var(--pink);color:var(--ink)}
+.B td{border-top:.25mm solid var(--line)}
+.B td.no span{display:inline-grid;place-items:center;width:5.6mm;height:5.6mm;border-radius:50%;background:var(--blush2);color:var(--pinkd);font-size:7.6pt}
+.B .notes{background:var(--blush);border-radius:4mm;padding:1mm 6mm 4mm}
+.B .notes i{border-color:#e3b9c7}
+
+/* ===== C · Minimal (centered, lines only) ===== */
+.C header{flex-direction:column-reverse;text-align:center;gap:5mm;padding-bottom:5mm}
+.C .logo{width:26mm}
+.C h1{font-size:16pt}
+.C .en{display:block;font:italic 9pt/1 'Playfair Display';color:var(--pinkd);margin-top:1.6mm;direction:ltr}
+.C .fileno{margin:4mm auto 0}
+.C h2{font:600 8.4pt/1 'IBM Plex Sans Arabic';color:var(--grey);letter-spacing:.02em}
+.C h2::after{content:"";flex:1;height:.25mm;background:var(--line)}
+.C th{color:var(--ink);border-bottom:.45mm solid var(--ink);padding-bottom:2.2mm}
+.C td{border-bottom:.25mm solid var(--line)}
+.C td.no{color:var(--pink)}
+.C footer{justify-content:center}
+
+/* ===== D · Side band ===== */
+.D .page{padding-left:28mm}
+.D .band{position:absolute;left:0;top:0;bottom:0;width:16mm;background:var(--pink);display:flex;align-items:center;justify-content:center}
+.D .band span{transform:rotate(-90deg);white-space:nowrap;font:600 8pt/1 'Montserrat';letter-spacing:.5em;color:#fff}
+.D header{padding-bottom:4mm;border-bottom:.3mm solid var(--line)}
+.D h2::before{content:attr(data-n);font:600 8pt/1 'Montserrat';color:var(--pink)}
+.D table{border-top:.45mm solid var(--ink)}
+.D th{color:var(--ink);background:var(--blush)}
+.D td{border-bottom:.25mm solid var(--line);border-left:.25mm dashed var(--line)}
+.D td:last-child{border-left:none}
+.D td.no{color:var(--ink);background:var(--blush)}
+.D footer{left:28mm}
+</style></head><body>
+<div class="page">
+  <div class="band" hidden><span>LASER SESSION RECORD</span></div>
+  <header>
+    <div>
+      <h1>ملف متابعة جلسات الليزر</h1>
+      <div class="en">Laser Session Record</div>
+      <div class="sub">سجل بيانات العميلة وعدد البلصات لكل جلسة</div>
+      <div class="fileno">رقم الملف <i></i></div>
+    </div>
+    <img class="logo" src="assets/logo.png" alt="One Rose Beauty Clinic">
+  </header>
+
+  <h2 data-n="01">بيانات العميلة</h2>
+  <div class="fields">
+    <div class="f">اسم العميلة <i></i></div><div class="f">رقم الهاتف <i></i></div>
+    <div class="f">نوع البشرة <i></i></div><div class="f">الجهاز / الباكدج <i></i></div>
+    <div class="f">تاريخ البدء <i></i></div><div class="f">ملاحظات طبية <i></i></div>
+  </div>
+
+  <h2 data-n="02">متابعة الجلسات</h2>
+  <table>
+    <thead><tr><th>الجلسة</th><th>التاريخ</th><th style="width:36mm">المناطق المعالجة</th><th>بلصات الجلسة</th><th>إجمالي البلصات</th><th>الباور / الطاقة</th><th style="width:32mm">ملاحظات الأخصائية</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <h2 data-n="03">ملاحظات إضافية</h2>
+  <div class="notes"><i></i><i></i></div>
+
+  <footer><span>ONE ROSE · BEAUTY CLINIC</span></footer>
+</div>
+<script>
+const v=new URLSearchParams(location.search).get('v')||'A';
+document.body.classList.add(v);
+if(v==='D')document.querySelector('.band').hidden=false;
+const r=document.getElementById('rows');
+for(let i=1;i<=14;i++)r.insertAdjacentHTML('beforeend',`<tr><td class="no"><span>${i}</span></td>${'<td></td>'.repeat(6)}</tr>`);
+</script>
+</body></html>
