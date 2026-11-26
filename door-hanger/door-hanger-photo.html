@@ -3,41 +3,46 @@
 <style>
 /* One Rose — opening door hanger, photo version. Trim 95x245mm, 3mm bleed (page 101x251mm).
    Die: hole Ø34mm at 30mm from top + slit + rounded corners (One-Rose-Door-Hanger-dieline.pdf). ?guides=1 shows it. */
-:root{--pink:#FC82A7;--ink:#151515}
+:root{--pink:#FC82A7;--ink:#151515;
+  /* theme (default = black); ?theme=W|P|N switches */
+  --bg:#151515;--bgrgb:21,21,21;--fg:#fff;--muted:#cfc6c9;--body:#e9e3e5;--accent:#FC82A7;--pillbg:#FC82A7;--pillfg:#151515;--qr:#8d8487}
+.W{--bg:#FFF6F9;--bgrgb:255,246,249;--fg:#151515;--muted:#7f7478;--body:#3b3437;--accent:#E05A86;--pillbg:#FC82A7;--pillfg:#151515;--qr:#b9a9af}
+.P{--bg:#FC82A7;--bgrgb:252,130,167;--fg:#151515;--muted:#4a2a35;--body:#2a1a20;--accent:#fff;--pillbg:#151515;--pillfg:#fff;--qr:#7a3550}
+.N{--bg:#F1E4DC;--bgrgb:241,228,220;--fg:#151515;--muted:#7a6a63;--body:#3b322e;--accent:#E05A86;--pillbg:#FC82A7;--pillfg:#151515;--qr:#b5a197}
 @page{size:101mm 251mm;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'IBM Plex Sans Arabic';background:#fff}
-.sheet{width:101mm;height:251mm;position:relative;overflow:hidden;background:var(--ink);break-after:page;color:#fff}
+.sheet{width:101mm;height:251mm;position:relative;overflow:hidden;background:var(--bg);break-after:page;color:var(--fg)}
 .t{position:absolute;left:3mm;top:3mm;width:95mm;height:245mm}
 
 /* FRONT: photo fills the top, fades into the brand black */
 .photo{position:absolute;left:0;top:-6mm;width:101mm;height:236mm;object-fit:cover;object-position:78% 0}
-.fade{position:absolute;left:0;right:0;top:150mm;bottom:0;background:linear-gradient(180deg,rgba(21,21,21,0) 0%,rgba(21,21,21,.8) 45%,var(--ink) 62%)}
+.fade{position:absolute;left:0;right:0;top:150mm;bottom:0;background:linear-gradient(180deg,rgba(var(--bgrgb),0) 0%,rgba(var(--bgrgb),.85) 45%,var(--bg) 62%)}
 .front .txt{position:absolute;left:9mm;right:9mm;bottom:12mm;display:flex;flex-direction:column;align-items:center;text-align:center}
 .logo{width:27mm}
 .kicker{font:italic 500 10.5pt/1 'Cormorant Garamond';color:var(--pink);direction:ltr;margin-top:5mm;letter-spacing:.02em}
 h1{font:700 11.6pt/1.4 'IBM Plex Sans Arabic';margin-top:4.6mm;white-space:nowrap}
-.gift{margin-top:3.4mm;background:var(--pink);color:var(--ink);border-radius:6mm;padding:2.2mm 5mm;font:700 9pt/1 'IBM Plex Sans Arabic'}
+.gift{margin-top:3.4mm;background:var(--pillbg);color:var(--pillfg);border-radius:6mm;padding:2.2mm 5mm;font:700 9pt/1 'IBM Plex Sans Arabic'}
 .gift-s{font:400 6.8pt/1 'IBM Plex Sans Arabic';color:#cfc6c9;margin-top:2.2mm}
 .ph{font:600 11pt/1 'Montserrat';letter-spacing:.06em;direction:ltr;margin-top:4.4mm}
 .ph small{display:block;font:500 6.4pt/1 'IBM Plex Sans Arabic';letter-spacing:0;color:#cfc6c9;margin-bottom:2mm;direction:rtl}
-.todo{background:rgba(252,130,167,.25);border-radius:1mm;padding:.2mm 1.4mm}
+.todo{background:rgba(252,130,167,.3);border-radius:1mm;padding:.2mm 1.4mm}
 
 /* BACK */
 .back .in{position:absolute;left:8mm;right:8mm;top:56mm;bottom:11mm;display:flex;flex-direction:column;align-items:center;text-align:center}
 .back .logo{width:30mm}
-.back h2{font:500 12pt/1 'Cormorant Garamond';letter-spacing:.24em;direction:ltr;margin-top:7mm;color:#fff}
+.back h2{font:500 12pt/1 'Cormorant Garamond';letter-spacing:.24em;direction:ltr;margin-top:7mm;color:var(--fg)}
 .back .ar{font:700 9.6pt/1 'IBM Plex Sans Arabic';margin-top:2.2mm}
-.back .rule{width:9mm;height:.4mm;background:var(--pink);margin:3.4mm 0 .6mm}
+.back .rule{width:9mm;height:.4mm;background:var(--accent);margin:3.4mm 0 .6mm}
 .grp{margin-top:5.6mm;width:100%}
-.grp b{display:block;font:600 7.6pt/1 'IBM Plex Sans Arabic';color:var(--pink);margin-bottom:1.6mm}
-.grp p{text-wrap:balance;font:400 7pt/1.8 'IBM Plex Sans Arabic';color:#e9e3e5}
+.grp b{display:block;font:600 7.6pt/1 'IBM Plex Sans Arabic';color:var(--accent);margin-bottom:1.6mm}
+.grp p{text-wrap:balance;font:400 7pt/1.8 'IBM Plex Sans Arabic';color:var(--body)}
 .grp .it{white-space:nowrap}
-.grp i{font-style:normal;color:var(--pink);padding:0 1mm}
-.qr{width:19mm;height:19mm;border:.35mm dashed #8d8487;border-radius:1.6mm;display:grid;place-items:center;font:600 6pt/1 'Montserrat';color:#8d8487;margin-top:6mm}
-.scan{font:500 6.6pt/1 'IBM Plex Sans Arabic';color:#cfc6c9;margin-top:2mm}
-.addr{margin-top:auto;font:400 6.5pt/1.7 'IBM Plex Sans Arabic';color:#cfc6c9}
-.addr b{display:block;color:var(--pink);font-weight:600;font-size:7pt;margin-bottom:.8mm}
+.grp i{font-style:normal;color:var(--accent);padding:0 1mm}
+.qr{width:19mm;height:19mm;border:.35mm dashed var(--qr);border-radius:1.6mm;display:grid;place-items:center;font:600 6pt/1 'Montserrat';color:var(--qr);margin-top:6mm}
+.scan{font:500 6.6pt/1 'IBM Plex Sans Arabic';color:var(--muted);margin-top:2mm}
+.addr{margin-top:auto;font:400 6.5pt/1.7 'IBM Plex Sans Arabic';color:var(--muted)}
+.addr b{display:block;color:var(--accent);font-weight:600;font-size:7pt;margin-bottom:.8mm}
 
 .die{position:absolute;inset:0;pointer-events:none;display:none}
 .guides .die{display:block}
@@ -68,5 +73,13 @@ h1{font:700 11.6pt/1.4 'IBM Plex Sans Arabic';margin-top:4.6mm;white-space:nowra
   </div></div>
   <svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M31.5,24 L0,8"/></svg>
 </section>
-<script>if(new URLSearchParams(location.search).get('guides'))document.body.classList.add('guides');</script>
+<script>
+const q=new URLSearchParams(location.search);
+if(q.get('guides'))document.body.classList.add('guides');
+const th=q.get('theme');
+if(th){document.body.classList.add(th);
+  // light backgrounds use the original black logo; the pink one uses a variant with a white bar
+  const src={W:'assets/logo.png',N:'assets/logo.png',P:'assets/logo-onpink.png'}[th];
+  document.querySelectorAll('.logo').forEach(l=>{l.src=src;if(th!=='P')l.style.mixBlendMode='multiply'});}
+</script>
 </body></html>
