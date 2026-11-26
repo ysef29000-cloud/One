@@ -4,7 +4,8 @@ const {chromium}=require('playwright');
 const [mode,opt]=process.argv.slice(2);
 (async()=>{
   const b=await chromium.launch();
-  const base='file://'+__dirname+'/options.html';
+  // PAGE=options2 node options-export.js  -> editorial options E/F/G
+  const base='file://'+__dirname+'/'+(process.env.PAGE||'options')+'.html';
   if(mode==='pdf'){
     const p=await b.newPage();
     await p.goto(base+'?opt='+opt);await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(500);

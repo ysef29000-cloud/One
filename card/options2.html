@@ -1,0 +1,118 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#FC82A7;--ink:#0B0B0B;--cream:#F5F0EC;--grey:#6b6461}
+@page{size:96mm 56mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff}
+/* 90x50mm trim + 3mm bleed; content kept >=4mm inside trim */
+.card{width:96mm;height:56mm;position:relative;overflow:hidden;break-after:page}
+.cream{background:var(--cream)}.pinkbg{background:var(--pink)}.inkbg{background:var(--ink)}
+.rose{position:absolute}
+.row{display:flex;align-items:center;gap:1.8mm;font:600 6.6pt/1 'Montserrat';letter-spacing:.04em}
+.ic{width:3.4mm;height:3.4mm;border-radius:50%;display:grid;place-items:center;flex:none}
+.ic svg{width:2mm;height:2mm}
+.spaced{font:600 8.2pt/1 'Montserrat';letter-spacing:.22em}
+.small{font:600 6.3pt/1.55 'Montserrat';letter-spacing:.02em}
+
+/* ---------- E · Editorial (like "grow") ---------- */
+.E.front .word{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:2mm;font:400 58pt/1 'Gloock';color:var(--ink);letter-spacing:-.01em}
+.E.back .mark{position:absolute;right:11mm;top:10mm;font:400 17pt/1 'Gloock';color:var(--ink)}
+.E.back .mark i{font-style:normal;color:var(--pink)}
+.E.back .info{position:absolute;left:11mm;bottom:10mm;color:var(--ink)}
+.E.back .spaced{margin-bottom:3mm}
+.E.back .small{color:var(--ink)}
+.E.back .contact{display:flex;gap:4.5mm;margin-top:2.4mm}
+.E .ic{background:var(--pink)}.E .ic svg{fill:var(--ink)}
+
+/* ---------- F · Rose line (like the cardiology card) ---------- */
+.F.front .rose{width:42mm;left:50%;top:5mm;transform:translateX(-50%)}
+.F.front .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.F.front .nm{font:500 15.5pt/1 'Playfair Display';letter-spacing:.06em;color:#fff}
+.F.front .sub{margin-top:2.4mm;font:600 5.8pt/1 'Montserrat';letter-spacing:.34em;color:var(--pink)}
+.F.back .left{position:absolute;left:9mm;top:0;bottom:0;width:30mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--ink)}
+.F.back .mono{font:400 26pt/1 'Playfair Display';letter-spacing:-.02em}
+.F.back .mono i{font-style:normal;color:var(--pink)}
+.F.back .left .small{margin-top:2mm;line-height:1.4}
+.F.back .slash{position:absolute;left:44mm;top:16mm;width:.3mm;height:24mm;background:var(--pink);transform:rotate(16deg)}
+.F.back .right{position:absolute;left:51mm;right:8mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:1.9mm;color:var(--ink)}
+.F.back .right .small{line-height:1.35}
+.F .ic{background:var(--ink)}.F .ic svg{fill:var(--pink)}
+
+/* ---------- G · Blush rose ---------- */
+.G.front .rose{width:46mm;right:-12mm;top:3mm}
+.G.front .txt{position:absolute;left:11mm;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;color:var(--ink)}
+.G.front .nm{font:400 19pt/1.04 'Gloock'}
+.G.front .rule{width:9mm;height:.35mm;background:var(--ink);margin:3.2mm 0 2.6mm}
+.G.front .sub{font:600 5.6pt/1.6 'Montserrat';letter-spacing:.26em}
+.G.back .wrap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff}
+.G.back .spaced{color:#fff}
+.G.back .rule{width:8mm;height:.35mm;background:var(--pink);margin:2.8mm 0}
+.G.back .small{color:#d9d4d1}
+.G.back .contact{display:flex;gap:5mm;margin-top:3.4mm}
+.G .row{color:#fff}
+.G .ic{background:var(--pink)}.G .ic svg{fill:var(--ink)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+</defs></svg>
+<template id="contact"><div class="row"><span class="ic"><svg><use href="#phone"/></svg></span>0109 098 9095</div><div class="row"><span class="ic"><svg><use href="#wa"/></svg></span>0102 931 7959</div></template>
+
+<!-- E -->
+<section class="card E front pinkbg" data-opt="E"><div class="word">Menna</div></section>
+<section class="card E back cream" data-opt="E">
+  <div class="mark">Menna<i>.</i></div>
+  <div class="info">
+    <div class="spaced">MENNA KHALED HAZEM</div>
+    <div class="small">Certified Skin &amp; Hair Care Specialist<br>Beauty &amp; Laser Clinic Owner</div>
+    <div class="contact"></div>
+  </div></section>
+
+<!-- F -->
+<section class="card F front inkbg" data-opt="F"><svg viewBox="-130 -125 260 470" class="rose"><mask id="r0" maskUnits="userSpaceOnUse" x="-200" y="-200" width="400" height="600">
+  <g fill="#000" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<g class="rose-stem">
+  <path d="M0,60 C-6,170 8,240 0,330"/>
+  <path d="M-2,190 C-24,158 -78,150 -108,176 C-80,212 -30,214 -2,190 Z"/>
+  <path d="M-2,190 C-36,182 -70,176 -100,178"/>
+  <path d="M4,252 C26,220 80,212 110,238 C82,274 32,276 4,252 Z"/>
+  <path d="M4,252 C38,244 72,238 102,240"/>
+  <path d="M-3,144 L-17,134 L-2,136"/>
+  <path d="M4,222 L18,212 L5,214"/>
+  <path d="M2,300 L-12,292 L1,292"/>
+</g><g class="rose-head"><path d="M20.45,-14.38 C68.24,-61.70 97.25,-30.76 100.00,0.00 C97.25,30.76 68.24,61.70 20.45,14.38 Z M19.99,15.01 C79.77,45.83 59.30,82.99 30.90,95.11 C0.80,102.00 -37.60,83.97 -7.35,23.89 Z M-8.10,23.65 C-18.94,90.03 -60.60,82.05 -80.90,58.78 C-96.76,32.28 -91.48,-9.81 -25.00,0.39 Z M-25.00,-0.39 C-91.48,9.81 -96.76,-32.28 -80.90,-58.78 C-60.60,-82.05 -18.94,-90.03 -8.10,-23.65 Z M-7.35,-23.89 C-37.60,-83.97 0.80,-102.00 30.90,-95.11 C59.30,-82.99 79.77,-45.83 19.99,-15.01 Z "/><path d="M20.48,1.00 C75.27,-5.08 78.87,27.85 66.26,48.31 C50.63,66.57 18.18,73.22 7.21,19.19 Z M5.38,19.78 C28.09,70.01 -2.11,83.61 -25.47,77.94 C-47.67,68.73 -64.02,39.91 -16.02,12.79 Z M-17.15,11.23 C-57.91,48.35 -80.17,23.83 -82.00,-0.14 C-80.09,-24.10 -57.74,-48.55 -17.12,-11.28 Z M-15.98,-12.84 C-63.88,-40.13 -47.44,-68.89 -25.21,-78.03 C-1.83,-83.62 28.33,-69.92 5.44,-19.76 Z M7.28,-19.16 C18.42,-73.16 50.85,-66.40 66.42,-48.09 C78.96,-27.58 75.25,5.34 20.48,-0.93 Z "/><path d="M14.04,-7.67 C48.27,-33.72 63.64,-14.56 63.92,3.20 C61.86,20.84 44.66,38.37 13.21,9.03 Z M11.63,10.99 C46.98,35.49 33.51,56.02 16.71,61.78 C-0.70,65.28 -22.69,54.33 -4.51,15.35 Z M-6.85,14.46 C-19.23,55.65 -42.93,49.18 -53.59,34.98 C-62.30,19.51 -58.68,-4.79 -15.99,0.46 Z M-15.87,-2.05 C-58.87,-1.09 -60.04,-25.63 -49.83,-40.16 C-37.80,-53.22 -13.58,-57.29 -5.38,-15.07 Z M-2.95,-15.73 C-17.15,-56.33 5.82,-65.02 22.79,-59.80 C38.94,-52.40 50.29,-30.62 12.67,-9.77 Z "/><path d="M11.72,0.88 C43.07,-3.87 42.35,22.46 29.22,36.82 C12.25,46.35 -13.55,41.06 -1.80,11.61 Z M-0.88,11.72 C3.87,43.07 -22.46,42.35 -36.82,29.22 C-46.35,12.25 -41.06,-13.55 -11.61,-1.80 Z M-11.72,-0.88 C-43.07,3.87 -42.35,-22.46 -29.22,-36.82 C-12.25,-46.35 13.55,-41.06 1.80,-11.61 Z M0.88,-11.72 C-3.87,-43.07 22.46,-42.35 36.82,-29.22 C46.35,-12.25 41.06,13.55 11.61,1.80 Z "/><path d="M4.26,-6.77 C8.70,-28.13 30.61,-11.33 30.57,9.46 C18.87,26.64 -8.70,28.13 -0.31,7.99 Z M3.73,7.08 C20.01,21.60 -5.49,32.17 -23.48,21.75 C-32.50,3.02 -20.01,-21.60 -6.77,-4.26 Z M-7.99,-0.31 C-28.71,6.53 -25.12,-20.84 -7.10,-31.20 C13.63,-29.66 28.71,-6.53 7.08,-3.73 Z "/><path d="M5.00,0.13 C17.83,-4.54 15.43,13.34 3.40,19.71 C-10.07,17.74 -18.32,1.70 -4.67,1.79 Z M-2.61,4.26 C-4.98,17.71 -19.27,6.70 -18.77,-6.91 C-10.33,-17.59 7.69,-16.71 0.78,-4.94 Z M-2.39,-4.39 C-12.85,-13.17 3.84,-20.04 15.37,-12.80 C20.40,-0.15 10.63,15.02 3.89,3.14 Z "/><path d="M-2,-2 C2,-8 10,-4 8,3 C6,10 -6,10 -9,2 C-12,-6 -4,-13 5,-12"/></g></g></mask>
+  <rect x="-200" y="-200" width="400" height="600" fill="#FC82A7" opacity="0.3" mask="url(#r0)"/></svg>
+  <div class="txt"><div class="nm">MENNA KHALED HAZEM</div><div class="sub">SKIN &amp; HAIR CARE SPECIALIST</div></div></section>
+<section class="card F back cream" data-opt="F">
+  <div class="left"><div class="mono">M<i>K</i></div><div class="small">Menna Khaled Hazem</div></div>
+  <div class="slash"></div>
+  <div class="right"><div class="small">Certified Skin &amp; Hair Care<br>Beauty &amp; Laser Clinic Owner</div><div class="contact" style="display:flex;flex-direction:column;gap:1.7mm;margin-top:1mm"></div></div></section>
+
+<!-- G -->
+<section class="card G front pinkbg" data-opt="G"><svg viewBox="-130 -125 260 470" class="rose"><mask id="r1" maskUnits="userSpaceOnUse" x="-200" y="-200" width="400" height="600">
+  <g fill="#000" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<g class="rose-stem">
+  <path d="M0,60 C-6,170 8,240 0,330"/>
+  <path d="M-2,190 C-24,158 -78,150 -108,176 C-80,212 -30,214 -2,190 Z"/>
+  <path d="M-2,190 C-36,182 -70,176 -100,178"/>
+  <path d="M4,252 C26,220 80,212 110,238 C82,274 32,276 4,252 Z"/>
+  <path d="M4,252 C38,244 72,238 102,240"/>
+  <path d="M-3,144 L-17,134 L-2,136"/>
+  <path d="M4,222 L18,212 L5,214"/>
+  <path d="M2,300 L-12,292 L1,292"/>
+</g><g class="rose-head"><path d="M20.45,-14.38 C68.24,-61.70 97.25,-30.76 100.00,0.00 C97.25,30.76 68.24,61.70 20.45,14.38 Z M19.99,15.01 C79.77,45.83 59.30,82.99 30.90,95.11 C0.80,102.00 -37.60,83.97 -7.35,23.89 Z M-8.10,23.65 C-18.94,90.03 -60.60,82.05 -80.90,58.78 C-96.76,32.28 -91.48,-9.81 -25.00,0.39 Z M-25.00,-0.39 C-91.48,9.81 -96.76,-32.28 -80.90,-58.78 C-60.60,-82.05 -18.94,-90.03 -8.10,-23.65 Z M-7.35,-23.89 C-37.60,-83.97 0.80,-102.00 30.90,-95.11 C59.30,-82.99 79.77,-45.83 19.99,-15.01 Z "/><path d="M20.48,1.00 C75.27,-5.08 78.87,27.85 66.26,48.31 C50.63,66.57 18.18,73.22 7.21,19.19 Z M5.38,19.78 C28.09,70.01 -2.11,83.61 -25.47,77.94 C-47.67,68.73 -64.02,39.91 -16.02,12.79 Z M-17.15,11.23 C-57.91,48.35 -80.17,23.83 -82.00,-0.14 C-80.09,-24.10 -57.74,-48.55 -17.12,-11.28 Z M-15.98,-12.84 C-63.88,-40.13 -47.44,-68.89 -25.21,-78.03 C-1.83,-83.62 28.33,-69.92 5.44,-19.76 Z M7.28,-19.16 C18.42,-73.16 50.85,-66.40 66.42,-48.09 C78.96,-27.58 75.25,5.34 20.48,-0.93 Z "/><path d="M14.04,-7.67 C48.27,-33.72 63.64,-14.56 63.92,3.20 C61.86,20.84 44.66,38.37 13.21,9.03 Z M11.63,10.99 C46.98,35.49 33.51,56.02 16.71,61.78 C-0.70,65.28 -22.69,54.33 -4.51,15.35 Z M-6.85,14.46 C-19.23,55.65 -42.93,49.18 -53.59,34.98 C-62.30,19.51 -58.68,-4.79 -15.99,0.46 Z M-15.87,-2.05 C-58.87,-1.09 -60.04,-25.63 -49.83,-40.16 C-37.80,-53.22 -13.58,-57.29 -5.38,-15.07 Z M-2.95,-15.73 C-17.15,-56.33 5.82,-65.02 22.79,-59.80 C38.94,-52.40 50.29,-30.62 12.67,-9.77 Z "/><path d="M11.72,0.88 C43.07,-3.87 42.35,22.46 29.22,36.82 C12.25,46.35 -13.55,41.06 -1.80,11.61 Z M-0.88,11.72 C3.87,43.07 -22.46,42.35 -36.82,29.22 C-46.35,12.25 -41.06,-13.55 -11.61,-1.80 Z M-11.72,-0.88 C-43.07,3.87 -42.35,-22.46 -29.22,-36.82 C-12.25,-46.35 13.55,-41.06 1.80,-11.61 Z M0.88,-11.72 C-3.87,-43.07 22.46,-42.35 36.82,-29.22 C46.35,-12.25 41.06,13.55 11.61,1.80 Z "/><path d="M4.26,-6.77 C8.70,-28.13 30.61,-11.33 30.57,9.46 C18.87,26.64 -8.70,28.13 -0.31,7.99 Z M3.73,7.08 C20.01,21.60 -5.49,32.17 -23.48,21.75 C-32.50,3.02 -20.01,-21.60 -6.77,-4.26 Z M-7.99,-0.31 C-28.71,6.53 -25.12,-20.84 -7.10,-31.20 C13.63,-29.66 28.71,-6.53 7.08,-3.73 Z "/><path d="M5.00,0.13 C17.83,-4.54 15.43,13.34 3.40,19.71 C-10.07,17.74 -18.32,1.70 -4.67,1.79 Z M-2.61,4.26 C-4.98,17.71 -19.27,6.70 -18.77,-6.91 C-10.33,-17.59 7.69,-16.71 0.78,-4.94 Z M-2.39,-4.39 C-12.85,-13.17 3.84,-20.04 15.37,-12.80 C20.40,-0.15 10.63,15.02 3.89,3.14 Z "/><path d="M-2,-2 C2,-8 10,-4 8,3 C6,10 -6,10 -9,2 C-12,-6 -4,-13 5,-12"/></g></g></mask>
+  <rect x="-200" y="-200" width="400" height="600" fill="#FFFFFF" opacity="0.6" mask="url(#r1)"/></svg>
+  <div class="txt"><div class="nm">Menna<br>Khaled Hazem</div><div class="rule"></div><div class="sub">SKIN &amp; HAIR CARE<br>SPECIALIST</div></div></section>
+<section class="card G back inkbg" data-opt="G"><div class="wrap">
+  <div class="spaced">MENNA KHALED HAZEM</div><div class="rule"></div>
+  <div class="small">Certified Skin &amp; Hair Care Specialist<br>Beauty &amp; Laser Clinic Owner</div>
+  <div class="contact"></div></div></section>
+
+<script>
+const t=document.getElementById('contact').innerHTML;
+document.querySelectorAll('.contact').forEach(c=>c.innerHTML=t);
+const o=new URLSearchParams(location.search).get('opt');
+if(o)document.querySelectorAll('.card').forEach(c=>{if(c.dataset.opt!==o)c.remove()});
+</script>
+</body></html>
