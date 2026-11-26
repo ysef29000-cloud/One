@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Minimal premium set: pink front / white back, very few elements, generous whitespace */
+:root{--pink:#FC82A7;--ink:#111;--grey:#8a8285}
+@page{size:96mm 56mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff}
+.card{width:96mm;height:56mm;position:relative;overflow:hidden;break-after:page;background:#fff}
+.front{background:var(--pink)}
+.c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.name{font:500 9.6pt/1 'Cormorant Garamond';letter-spacing:.32em;color:var(--ink);padding-left:.32em}
+.mono{font:500 16pt/1 'Cormorant Garamond';letter-spacing:.18em;color:#fff;padding-left:.18em}
+.title{font:italic 500 7.6pt/1.45 'Cormorant Garamond';color:var(--grey)}
+.num{font:500 6pt/1 'Montserrat';letter-spacing:.12em;color:var(--ink);display:flex;align-items:center;gap:1.5mm}
+.num svg{width:2.3mm;height:2.3mm;fill:var(--pink)}
+.dash{width:5mm;height:.25mm;background:var(--pink)}
+
+/* K: front = name only */
+.K.back .info{position:absolute;left:11mm;bottom:11mm}
+.K.back .title{margin:2.4mm 0 4mm}
+.K.back .nums{display:flex;flex-direction:column;gap:2mm}
+.K.back .name{font-size:8.4pt;padding-left:0}
+
+/* L: front = monogram only */
+.L.back .dash{margin:3mm 0}
+.L.back .nums{display:flex;gap:6mm;margin-top:4.2mm}
+.L.back .name{font-size:8.6pt}
+
+/* M: front = name + one word, bottom-left */
+.M.front .bl{position:absolute;left:11mm;bottom:11mm}
+.M.front .name{padding-left:0;font-size:9pt}
+.M.front .sub{margin-top:2mm;font:500 5.4pt/1 'Montserrat';letter-spacing:.3em;color:#fff}
+.M.back .nums{position:absolute;right:11mm;bottom:11mm;display:flex;flex-direction:column;gap:2mm;align-items:flex-start}
+.M.back .title{position:absolute;left:11mm;bottom:11mm;text-align:left}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+</defs></svg>
+<template id="nums"><div class="num"><svg><use href="#phone"/></svg>0109 098 9095</div><div class="num"><svg><use href="#wa"/></svg>0102 931 7959</div></template>
+
+<!-- K -->
+<section class="card K front" data-opt="K"><div class="c"><div class="name">MENNA KHALED HAZEM</div></div></section>
+<section class="card K back" data-opt="K"><div class="info">
+  <div class="name">MENNA KHALED HAZEM</div>
+  <div class="title">Certified Skin &amp; Hair Care Specialist<br>Beauty &amp; Laser Clinic Owner</div>
+  <div class="nums"></div></div></section>
+
+<!-- L -->
+<section class="card L front" data-opt="L"><div class="c"><div class="mono">M K</div></div></section>
+<section class="card L back" data-opt="L"><div class="c">
+  <div class="name">MENNA KHALED HAZEM</div><div class="dash"></div>
+  <div class="title">Certified Skin &amp; Hair Care Specialist<br>Beauty &amp; Laser Clinic Owner</div>
+  <div class="nums"></div></div></section>
+
+<!-- M -->
+<section class="card M front" data-opt="M"><div class="bl"><div class="name">MENNA KHALED HAZEM</div><div class="sub">SKIN · HAIR · LASER</div></div></section>
+<section class="card M back" data-opt="M">
+  <div class="title">Certified Skin &amp; Hair Care Specialist<br>Beauty &amp; Laser Clinic Owner</div>
+  <div class="nums"></div></section>
+
+<script>
+const t=document.getElementById('nums').innerHTML;
+document.querySelectorAll('.nums').forEach(c=>c.innerHTML=t);
+const o=new URLSearchParams(location.search).get('opt');
+if(o)document.querySelectorAll('.card').forEach(c=>{if(c.dataset.opt!==o)c.remove()});
+</script>
+</body></html>
