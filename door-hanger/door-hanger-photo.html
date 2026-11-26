@@ -11,27 +11,28 @@ body{font-family:'IBM Plex Sans Arabic';background:#fff}
 .t{position:absolute;left:3mm;top:3mm;width:95mm;height:245mm}
 
 /* FRONT: photo fills the top, fades into the brand black */
-.photo{position:absolute;left:0;top:-12mm;width:101mm;height:225mm;object-fit:cover;object-position:78% 0}
-.fade{position:absolute;left:0;right:0;top:120mm;height:95mm;background:linear-gradient(180deg,rgba(21,21,21,0) 0%,rgba(21,21,21,.75) 55%,var(--ink) 100%)}
+.photo{position:absolute;left:0;top:-6mm;width:101mm;height:236mm;object-fit:cover;object-position:78% 0}
+.fade{position:absolute;left:0;right:0;top:150mm;bottom:0;background:linear-gradient(180deg,rgba(21,21,21,0) 0%,rgba(21,21,21,.8) 45%,var(--ink) 62%)}
 .front .txt{position:absolute;left:9mm;right:9mm;bottom:12mm;display:flex;flex-direction:column;align-items:center;text-align:center}
-.logo{width:40mm}
+.logo{width:27mm}
 .kicker{font:italic 500 10.5pt/1 'Cormorant Garamond';color:var(--pink);direction:ltr;margin-top:5mm;letter-spacing:.02em}
-h1{font:700 12.6pt/1.5 'IBM Plex Sans Arabic';margin-top:2.4mm}
-.gift{margin-top:4.6mm;background:var(--pink);color:var(--ink);border-radius:6mm;padding:2.2mm 5mm;font:700 9pt/1 'IBM Plex Sans Arabic'}
+h1{font:700 11.6pt/1.4 'IBM Plex Sans Arabic';margin-top:4.6mm;white-space:nowrap}
+.gift{margin-top:3.4mm;background:var(--pink);color:var(--ink);border-radius:6mm;padding:2.2mm 5mm;font:700 9pt/1 'IBM Plex Sans Arabic'}
 .gift-s{font:400 6.8pt/1 'IBM Plex Sans Arabic';color:#cfc6c9;margin-top:2.2mm}
-.ph{font:600 11pt/1 'Montserrat';letter-spacing:.06em;direction:ltr;margin-top:5.4mm}
+.ph{font:600 11pt/1 'Montserrat';letter-spacing:.06em;direction:ltr;margin-top:4.4mm}
 .ph small{display:block;font:500 6.4pt/1 'IBM Plex Sans Arabic';letter-spacing:0;color:#cfc6c9;margin-bottom:2mm;direction:rtl}
 .todo{background:rgba(252,130,167,.25);border-radius:1mm;padding:.2mm 1.4mm}
 
 /* BACK */
-.back .in{position:absolute;left:9mm;right:9mm;top:54mm;bottom:11mm;display:flex;flex-direction:column;align-items:center;text-align:center}
+.back .in{position:absolute;left:8mm;right:8mm;top:56mm;bottom:11mm;display:flex;flex-direction:column;align-items:center;text-align:center}
 .back .logo{width:30mm}
 .back h2{font:500 12pt/1 'Cormorant Garamond';letter-spacing:.24em;direction:ltr;margin-top:7mm;color:#fff}
 .back .ar{font:700 9.6pt/1 'IBM Plex Sans Arabic';margin-top:2.2mm}
 .back .rule{width:9mm;height:.4mm;background:var(--pink);margin:3.4mm 0 .6mm}
-.grp{margin-top:4.4mm;width:100%}
+.grp{margin-top:5.6mm;width:100%}
 .grp b{display:block;font:600 7.6pt/1 'IBM Plex Sans Arabic';color:var(--pink);margin-bottom:1.6mm}
-.grp p{font:400 7pt/1.7 'IBM Plex Sans Arabic';color:#e9e3e5}
+.grp p{text-wrap:balance;font:400 7pt/1.8 'IBM Plex Sans Arabic';color:#e9e3e5}
+.grp .it{white-space:nowrap}
 .grp i{font-style:normal;color:var(--pink);padding:0 1mm}
 .qr{width:19mm;height:19mm;border:.35mm dashed #8d8487;border-radius:1.6mm;display:grid;place-items:center;font:600 6pt/1 'Montserrat';color:#8d8487;margin-top:6mm}
 .scan{font:500 6.6pt/1 'IBM Plex Sans Arabic';color:#cfc6c9;margin-top:2mm}
@@ -48,11 +49,9 @@ h1{font:700 12.6pt/1.5 'IBM Plex Sans Arabic';margin-top:2.4mm}
   <div class="fade"></div>
   <div class="t"><div class="txt">
     <img class="logo" src="assets/logo-white.png" alt="One Rose Beauty Clinic">
-    <div class="kicker">Grand Opening</div>
-    <h1>افتتاح أحدث صرح<br>للجلدية والليزر والتجميل</h1>
+    <h1>افتتاح أحدث صرح للجلدية والليزر والتجميل</h1>
     <div class="gift">الكشف مجاني على البشرة والشعر</div>
-    <div class="gift-s">هدية الافتتاح لفترة محدودة</div>
-    <div class="ph"><small>للحجز والاستفسار</small><span class="todo">01X XXXX XXXX</span></div>
+    <div class="ph"><span class="todo">01X XXXX XXXX</span></div>
   </div></div>
   <svg class="die" viewBox="-3 -3 101 251"><path d="M8,0 H87 A8,8 0 0 1 95,8 V241 A4,4 0 0 1 91,245 H4 A4,4 0 0 1 0,241 V8 A8,8 0 0 1 8,0 Z"/><circle cx="47.5" cy="30" r="17"/><path d="M63.5,24 L95,8"/></svg>
 </section>
@@ -61,9 +60,9 @@ h1{font:700 12.6pt/1.5 'IBM Plex Sans Arabic';margin-top:2.4mm}
   <div class="t"><div class="in">
     <img class="logo" src="assets/logo-white.png" alt="">
     <h2>OUR SERVICES</h2><div class="ar">خدمات العيادة المتكاملة</div><div class="rule"></div>
-    <div class="grp"><b>العناية الفائقة ونضارة البشرة</b><p>هيدرافيشل للوجه <i>·</i> للظهر <i>·</i> للمؤخرة<br>جلسات أوكسيجينو لنضارة وتجديد البشرة<br>التقشير البارد <i>·</i> التقشير الكيميائي<br>جلسات الديرما بن العلاجية للبشرة والشعر</p></div>
-    <div class="grp"><b>العلاجات التجميلية والجلدية</b><p>إزالة الزوائد الجلدية <i>·</i> علاج جلد الوزة<br>شد جفون العين بدون جراحة<br>علاج الجروح وآثار العمليات وعلامات التمدد<br>علاج الندبات العميقة بتقطيع الألياف</p></div>
-    <div class="grp"><b>الحقن التجميلي والعلاجي</b><p>حقن الفيلر <i>·</i> حقن البوتوكس<br>حقن سكين بوستر <i>·</i> حقن ميزوثيرابي</p></div>
+    <div class="grp"><b>العناية الفائقة ونضارة البشرة</b><p><span class="it">هيدرافيشل (للوجه – للظهر – للمؤخرة) <i>·</i></span> <span class="it">جلسات أوكسيجينو لنضارة وتجديد البشرة <i>·</i></span> <span class="it">التقشير البارد <i>·</i></span> <span class="it">التقشير الكيميائي <i>·</i></span> <span class="it">جلسات الديرما بن العلاجية للبشرة والشعر</span></p></div>
+    <div class="grp"><b>العلاجات التجميلية والجلدية</b><p><span class="it">إزالة الزوائد الجلدية <i>·</i></span> <span class="it">علاج جلد الوزة <i>·</i></span> <span class="it">شد جفون العين بدون جراحة <i>·</i></span> <span class="it">علاج الجروح وآثار العمليات وعلامات التمدد <i>·</i></span> <span class="it">علاج الندبات العميقة بتقطيع الألياف</span></p></div>
+    <div class="grp"><b>الحقن التجميلي والعلاجي</b><p><span class="it">حقن الفيلر <i>·</i></span> <span class="it">حقن البوتوكس <i>·</i></span> <span class="it">حقن سكين بوستر <i>·</i></span> <span class="it">حقن ميزوثيرابي</span></p></div>
     <div class="qr">QR</div><div class="scan">امسحي الكود للحجز على الواتساب</div>
     <div class="addr"><b>العنوان</b>جسر السويس (الجراج) – بجوار مترو النزهة<br>1 ش عزيز المصري – أمام سنترال النزهة وكافيتريا روتانا<br>فوق محلات هابي باك – الدور الرابع – القاهرة</div>
   </div></div>
