@@ -2,9 +2,10 @@
 const {chromium}=require('playwright');const fs=require('fs');
 const TH=process.argv[2]||'';  // '', W, P or N
 const IMG=process.argv[3]||'';  // '' or rose
+const FLAT=process.argv[4]||'';
 const SUF=(IMG?'-'+IMG:'')+(TH?'-'+TH:'');
 (async()=>{
-  const b=await chromium.launch();const url='file://'+__dirname+'/door-hanger-photo.html?theme='+TH+'&img='+IMG;
+  const b=await chromium.launch();const url='file://'+__dirname+'/door-hanger-photo.html?theme='+TH+'&img='+IMG+(FLAT?'&flat='+FLAT:'');
   const p=await b.newPage();
   await p.goto(url);await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(800);
   await p.pdf({path:__dirname+'/One-Rose-Door-Hanger-photo'+SUF+'-print.pdf',printBackground:true,preferCSSPageSize:true});

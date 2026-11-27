@@ -63,6 +63,10 @@ h1{font:700 11.6pt/1.4 'IBM Plex Sans Arabic';margin-top:4.6mm;white-space:nowra
 .rosev h1{margin-top:3.2mm}
 .rosev .gift{margin-top:2.8mm}
 .rosev .ph{margin-top:3.4mm}
+/* flat print mode: one opaque baked image, no alpha gradients or blend modes */
+.flat .photo{top:0!important;left:0;width:101mm!important;height:251mm!important;object-fit:fill}
+.flat .fade,.flat .topfade{display:none!important}
+.flat .logo{mix-blend-mode:normal!important}
 .die{position:absolute;inset:0;pointer-events:none;display:none}
 .guides .die{display:block}
 .die *{fill:none;stroke:#00AEEF;stroke-width:.35;stroke-dasharray:1.6 1}
@@ -103,5 +107,6 @@ if(th){document.body.classList.add(th);
   // light backgrounds use the original black logo; the pink one uses a variant with a white bar
   const src={W:'assets/logo.png',N:'assets/logo.png',P:'assets/logo-onpink.png'}[th];
   document.querySelectorAll('.logo').forEach(l=>{l.src=src;if(th!=='P')l.style.mixBlendMode='multiply'});}
+if(q.get('flat')){document.body.classList.add('flat');document.querySelector('.photo').src=q.get('flat');}
 </script>
 </body></html>
