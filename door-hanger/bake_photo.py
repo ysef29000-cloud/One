@@ -19,8 +19,17 @@ def blend(y,a):  # a = white opacity
 t0=mm(52)  # top band: solid white to 55%, then fades out
 for y in range(min(t0,H)):
     f=y/t0;blend(y,1 if f<=.55 else 1-(f-.55)/.45)
-# bottom: smooth fade from 160mm, pure white from 194mm (logo starts ~197mm)
-f0,f1=mm(160),mm(194)
+# bottom: same as the approved CSS fade: from 186mm, .9 white at 35%, pure white at 50%
+f0=mm(186);L=H-f0
 for y in range(f0,H):
-    f=min(1,(y-f0)/(f1-f0));blend(y,f*f*(3-2*f))
+    f=(y-f0)/L;a=.9*f/.35 if f<.35 else (.9+.1*(f-.35)/.15 if f<.5 else 1)
+    blend(y,min(1,a))
+# optional: multiply the logo into the image (its white disappears -> looks transparent, no PDF transparency)
+if len(sys.argv)>3:
+    from PIL import ImageChops
+    lx,ly,lw=map(float,sys.argv[3].split(','))
+    lg=Image.open(sys.argv[4]).convert('RGB');lh=lw*lg.height/lg.width
+    lg=lg.resize((mm(lw),mm(lh)),Image.LANCZOS)
+    box=(mm(lx),mm(ly),mm(lx)+lg.width,mm(ly)+lg.height)
+    canvas.paste(ImageChops.multiply(canvas.crop(box),lg),box[:2])
 canvas.save(out,quality=95,dpi=(DPI,DPI))

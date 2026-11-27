@@ -67,6 +67,13 @@ h1{font:700 11.6pt/1.4 'IBM Plex Sans Arabic';margin-top:4.6mm;white-space:nowra
 .flat .photo{top:0!important;left:0;width:101mm!important;height:251mm!important;object-fit:fill}
 .flat .fade,.flat .topfade{display:none!important}
 .flat .logo{mix-blend-mode:normal!important}
+.flat .front .logo{visibility:hidden}  /* logo is baked into the photo */
+/* back: heavier, darker text for legibility after print */
+.W .grp p{font-weight:600;color:#1e1a1c}
+.W .grp b{font-weight:700}
+.W .scan{font-weight:600;color:#1e1a1c}
+.W .addr{font-weight:600;color:#1e1a1c}
+.W .back .ar{font-weight:700}
 .die{position:absolute;inset:0;pointer-events:none;display:none}
 .guides .die{display:block}
 .die *{fill:none;stroke:#00AEEF;stroke-width:.35;stroke-dasharray:1.6 1}
