@@ -53,6 +53,10 @@ h1{font:700 11.6pt/1.4 'IBM Plex Sans Arabic';margin-top:4.6mm;white-space:nowra
 /* second rose photo (?img=rose2): forehead sits under the hole, so no plain band needed */
 .rose2 .photo{top:-2mm;height:253mm;object-position:50% 0}
 .rose2 .topfade{display:none}
+/* third rose photo (?img=rose3): wider than the hanger, crop from the rose side so the hole lands on the forehead */
+.rose3 .photo{top:0;height:251mm;object-position:100% 0}
+.rose3 .topfade{display:none}
+.rose3 .fade{top:190mm}
 .rosev .front .logo{width:23mm}
 .rosev h1{margin-top:3.2mm}
 .rosev .gift{margin-top:2.8mm}
@@ -91,6 +95,7 @@ const q=new URLSearchParams(location.search);
 if(q.get('guides'))document.body.classList.add('guides');
 const th=q.get('theme');
 if(q.get('img')==='rose'){document.body.classList.add('rosev');document.querySelector('.photo').src='assets/model-rose.jpg';}
+if(q.get('img')==='rose3'){document.body.classList.add('rosev','rose3');document.querySelector('.photo').src='assets/model-rose3.jpg';}
 if(q.get('img')==='rose2'){document.body.classList.add('rosev','rose2');document.querySelector('.photo').src='assets/model-rose2.jpg';}
 if(th){document.body.classList.add(th);
   // light backgrounds use the original black logo; the pink one uses a variant with a white bar
