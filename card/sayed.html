@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Sayed Mohamed Gad — business card, same layout as Menna's option B. Navy / beige / white.
+   90x50mm trim + 3mm bleed. ?opt=S1 (navy front) | S2 (beige front) */
+:root{--navy:#16233A;--beige:#D8C3A0;--beige-l:#EFE5D4;--ink:#16233A}
+@page{size:96mm 56mm;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff}
+.card{width:96mm;height:56mm;position:relative;overflow:hidden;background:#fff;break-after:page}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.mono{font:italic 400 44pt/1 'Playfair Display';letter-spacing:-.02em}
+.rule{width:12mm;height:.3mm;margin:3mm 0 2.6mm}
+.fname{font:500 9pt/1 'Playfair Display';letter-spacing:.3em;padding-left:.3em}
+.name{font:500 12.6pt/1 'Playfair Display';letter-spacing:.08em;color:var(--ink);white-space:nowrap}
+.brule{width:10mm;height:.4mm;margin:2.6mm 0}
+.role{font:600 7.2pt/1.3 'Cormorant Garamond';letter-spacing:.14em;color:var(--ink)}
+.pill{display:inline-block;margin-top:1.6mm;border-radius:1.3mm;padding:1.1mm 2.6mm 1mm;font:700 6.3pt/1 'Cormorant Garamond';letter-spacing:.15em}
+.contact{display:flex;align-items:center;gap:2.4mm;margin-top:4mm;font:600 7.6pt/1 'Montserrat';letter-spacing:.06em;color:var(--ink)}
+.ic{width:4.4mm;height:4.4mm;border-radius:50%;background:var(--navy);display:grid;place-items:center;flex:none}
+.ic svg{width:2.5mm;height:2.5mm;fill:var(--beige)}
+.ics{display:flex;gap:1.2mm}
+
+/* S1: navy front */
+.S1.front{background:var(--navy)}
+.S1.front .mono{color:var(--beige)}
+.S1.front .rule{background:var(--beige)}
+.S1.front .fname{color:#fff}
+.S1.back .brule{background:var(--beige)}
+.S1.back .pill{background:var(--beige);color:var(--navy)}
+
+/* S2: beige front */
+.S2.front{background:var(--beige)}
+.S2.front .mono{color:var(--navy)}
+.S2.front .rule{background:var(--navy)}
+.S2.front .fname{color:var(--navy)}
+.S2.back .brule{background:var(--beige)}
+.S2.back .pill{background:var(--navy);color:#fff}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></symbol>
+</defs></svg>
+<template id="front"><div class="center"><div class="mono">SG</div><div class="rule"></div><div class="fname">SAYED MOHAMED GAD</div></div></template>
+<template id="back"><div class="center">
+  <div class="name">SAYED MOHAMED GAD</div><div class="brule"></div>
+  <div class="role">FOUNDER &amp; BUSINESS OWNER</div>
+  <div class="pill">MULTI-VENTURE INVESTMENTS</div>
+  <div class="contact"><span class="ics"><span class="ic"><svg><use href="#phone"/></svg></span><span class="ic"><svg><use href="#wa"/></svg></span></span>0100 033 3049</div>
+</div></template>
+
+<section class="card S1 front" data-opt="S1"></section><section class="card S1 back" data-opt="S1"></section>
+<section class="card S2 front" data-opt="S2"></section><section class="card S2 back" data-opt="S2"></section>
+<script>
+const F=document.getElementById('front').innerHTML,B=document.getElementById('back').innerHTML;
+document.querySelectorAll('.card').forEach(c=>c.innerHTML=c.classList.contains('front')?F:B);
+const o=new URLSearchParams(location.search).get('opt');
+if(o)document.querySelectorAll('.card').forEach(c=>{if(c.dataset.opt!==o)c.remove()});
+</script>
+</body></html>
